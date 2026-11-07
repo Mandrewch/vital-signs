@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="#334155" stroke-width="4" opacity="0.6" />
+
+  <!-- Heart outline & Pulse line -->
+  <path d="M256,410 C256,410 100,310 100,200 C100,140 145,100 205,100 C238,100 256,120 256,120 C256,120 274,100 307,100 C367,100 412,140 412,200 C412,310 256,410 256,410 Z" 
+        fill="#0f2922" stroke="#059669" stroke-width="8" opacity="0.7"/>
+
+  <!-- Dynamic ECG / Vital Signs Pulse wave -->
+  <path d="M 110,230 L 190,230 L 215,160 L 245,290 L 275,130 L 305,270 L 325,230 L 402,230" 
+        fill="none" 
+        stroke="url(#pulseGrad)" 
+        stroke-width="18" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#glow)"/>
+</svg>
